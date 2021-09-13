@@ -24,19 +24,21 @@ const showProducts = (products) => {
         const ratingCount = product.rating.count;
         const div = document.createElement("div");
         div.classList.add("product");
-        div.innerHTML = `<div class="single-product card" style="width: 20rem;">
+        div.innerHTML = `
+    <div class="single-product card" style="width: 18rem;  background-color: rgba(250, 240, 230, 0.5);">
       <div>
     <img class="w-75 card-img-top" height="220px" src=${image}></img>
       </div>
       <div class="card-body">
       <h5 class="card-title">${product.title}</h5>
       <p class="card-text">Category: ${product.category}</p>
-      <ul class="list-group list-group-flush">
-      <li class="list-group-item fs-5 rating">Rating: <span style="color:coral">${ratingRate}</span> <span style="color:Sienna"> (${ratingCount} users)</span></li>
-      <li class="list-group-item"><h3>Price: $ ${product.price}</h3></li>
+      <ul class="list-group list-group-flush rounded">
+      <li class=" fs-5 rating">Rating: <i class="fas fa-star-half-alt"></i> <span id='avg-rating'> ${ratingRate}</span> <span  id='user'> (${ratingCount} users)</span></li>
+      <li class="rating"><h3>Price: $ ${product.price}</h3></li>
     </ul></div>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class=" add-cart btn btn-secondary">add to cart</button>
-      <button id="details-btn" class="btn details btn-info">Details</button></div>
+    <div class="d-flex">
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="w-50 add-cart btn btn-secondary btn-outline">add to cart</button>
+      <button id="details-btn" class="w-50 btn details btn-info">Details</button></div></div>
       `;
         //card add on the UI
         document.getElementById("all-products").appendChild(div);
