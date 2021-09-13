@@ -16,42 +16,6 @@ body {
     font-weight: 700;
 }
 
-
-/******************
-Commenting Out CSS those are not needed after polishing
-*********************/
-
-
-/* .search-field {
-    border: none;
-    border-radius: 50px;
-    padding: 5px;
-    outline: none;
-}
-
-.search-field:hover {
-    outline: none;
-    border: none;
-}
-
-.search-field {
-    margin: auto;
-}
-
-#input-field {
-    border: 2px solid rgba(243, 201, 16, 0.966);
-    width: 500px;
-    border-radius: 15px;
-    padding: 10px 20px;
-}
-
-.search-button {
-    padding: 10px 20px;
-    border: 2px solid rgba(0, 0, 0, 0.342);
-    border-radius: 15px;
-    background-color: rgba(255, 228, 196, 0.829);
-} */
-
 #all-products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -74,13 +38,6 @@ Commenting Out CSS those are not needed after polishing
     border-radius: 10px;
     /* border: 2px solid olive; */
 }
-
-
-/* .product-image {
-    width: 150px;
-    height: 150px;
-}
- */
 
 
 /* Side Cart Style (My-cart) */
@@ -126,7 +83,7 @@ Commenting Out CSS those are not needed after polishing
 
 .rating h3 {
     color: DarkSlateGrey;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 
@@ -135,7 +92,11 @@ Commenting Out CSS those are not needed after polishing
 .card-btn {
     margin-bottom: 20px;
     margin-left: 5px;
+    margin-right: 5px;
 }
+
+
+/* For Responsive */
 
 @media only screen and (max-width: 768px) {
     #all-products {

@@ -13,19 +13,17 @@ const loadProducts = () => {
 
 // show all product in UI 
 const showProducts = (products) => {
-    console.log(products);
     //variable name changed
     const allProducts = products.map((product) => product);
-    console.log(allProducts);
     for (const product of allProducts) {
         const image = product.image;
-        //for rating get rating items
+        //for rating get rating data.
         const ratingRate = product.rating.rate;
         const ratingCount = product.rating.count;
         const div = document.createElement("div");
         div.classList.add("product");
         div.innerHTML = `
-    <div class="single-product card" style="width: 18rem;  background-color: rgba(250, 240, 230, 0.5);">
+    <div class="single-product card" style="width: 18rem;  background-color: RGBA(250,240,230,0.5);">
       <div>
     <img class="w-75 card-img-top" height="220px" src=${image}></img>
       </div>
@@ -33,11 +31,12 @@ const showProducts = (products) => {
       <h6 class="card-title">${product.title}</h6>
       <p class="card-text">Category: ${product.category}</p>
       <ul class="list-group list-group-flush rounded">
-      <li class="fs-5 rating">Rating: <i class="fas fa-star-half-alt"></i> <span id='avg-rating'> ${ratingRate}</span> <span  id='user'> (${ratingCount} users)</span></li>
       <li class="rating"><h3>Price: $ ${product.price}</h3></li>
+      <li class="fs-5 rating">Rating: <i class="fas fa-star-half-alt"></i> <span id='avg-rating'> ${ratingRate}</span> <span  id='user'> (${ratingCount} users)</span></li>
+      
     </ul></div>
     <div class="d-flex">
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="w-50 card-btn btn btn-secondary btn-outline">add to cart</button>
+      <button onclick="addToCart(${product.price})" id="addToCart-btn" class="w-50 card-btn btn btn-secondary btn-outline">add to cart</button>
       <button id="details-btn" class="w-50 btn details  card-btn btn-info">Details</button></div></div>
       `;
         //card add on the UI
@@ -45,10 +44,10 @@ const showProducts = (products) => {
     }
 };
 let count = 0;
-const addToCart = (id, price) => {
+//parameter reduced to one from two
+const addToCart = (price) => {
     count = count + 1;
     updatePrice("price", price);
-
     updateTaxAndCharge();
     updateTotal();
     document.getElementById("total-Products").innerText = count;
@@ -65,11 +64,10 @@ const updatePrice = (id, value) => {
     const convertedOldPrice = getInputValue(id);
     const convertPrice = parseFloat(value);
     const total = convertedOldPrice + convertPrice;
-    // document.getElementById(id).innerText = Math.round(total);
     document.getElementById(id).innerText = total.toFixed(2);
 };
 
-// set innerText function
+// set innerText function with two decimal precision
 const setInnerText = (id, value) => {
     document.getElementById(id).innerText = value.toFixed(2);
 };
@@ -77,22 +75,19 @@ const setInnerText = (id, value) => {
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
     const priceConverted = getInputValue("price");
-    //delivery charge fixed
+    //delivery charge fixed to int value
     if (priceConverted < 200) {
         document.getElementById("delivery-charge").innerText = 20;
     }
     if (priceConverted > 200) {
-        // setInnerText("delivery-charge", 30);
         document.getElementById("delivery-charge").innerText = 30;
         setInnerText("total-tax", priceConverted * 0.2);
     }
     if (priceConverted > 400) {
-        // setInnerText("delivery-charge", 50);
         document.getElementById("delivery-charge").innerText = 50;
         setInnerText("total-tax", priceConverted * 0.3);
     }
     if (priceConverted > 500) {
-        // setInnerText("delivery-charge", 60);
         document.getElementById("delivery-charge").innerText = 60;
         setInnerText("total-tax", priceConverted * 0.4);
     }
