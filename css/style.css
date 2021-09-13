@@ -70,7 +70,7 @@ Commenting Out CSS those are not needed after polishing
 }
 
 .single-product:hover {
-    box-shadow: 4px 4px 7px 7px rgba(255, 68, 0, 0.41);
+    box-shadow: 4px 4px 7px 7px rgba(139, 69, 19, 0.52);
     border-radius: 10px;
     /* border: 2px solid olive; */
 }
@@ -107,7 +107,11 @@ Commenting Out CSS those are not needed after polishing
     border-radius: 20px;
     margin-top: 20px;
     list-style: none;
-    color: DarkGoldenRod;
+    color: DarkSlateGray;
+}
+
+.fas {
+    color: goldenrod;
 }
 
 #avg-rating {

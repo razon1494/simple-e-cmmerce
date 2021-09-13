@@ -33,7 +33,7 @@ const showProducts = (products) => {
       <h6 class="card-title">${product.title}</h6>
       <p class="card-text">Category: ${product.category}</p>
       <ul class="list-group list-group-flush rounded">
-      <li class=" fs-5 rating">Rating: <i class="fas fa-star-half-alt"></i> <span id='avg-rating'> ${ratingRate}</span> <span  id='user'> (${ratingCount} users)</span></li>
+      <li class="fs-5 rating">Rating: <i class="fas fa-star-half-alt"></i> <span id='avg-rating'> ${ratingRate}</span> <span  id='user'> (${ratingCount} users)</span></li>
       <li class="rating"><h3>Price: $ ${product.price}</h3></li>
     </ul></div>
     <div class="d-flex">
