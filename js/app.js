@@ -26,7 +26,7 @@ const showProducts = (products) => {
         div.classList.add("product");
         div.innerHTML = `<div class="single-product card" style="width: 20rem;">
       <div>
-    <img class="card-img-top" src=${image} width="200" height="200"></img>
+    <img class="w-75 card-img-top" height="220px" src=${image}></img>
       </div>
       <div class="card-body">
       <h5 class="card-title">${product.title}</h5>
