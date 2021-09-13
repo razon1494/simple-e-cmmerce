@@ -26,17 +26,18 @@
         <nav class="navbar navbar-light bg-dark fixed-top">
             <div class="container-fluid container">
                 <h1 class="title">Fusion Mart</h1>
-                <form class="d-flex w-50">
-                    <input id="input-field" class="form-control me-2" type="search" placeholder="Search Products Here" aria-label="Search">
-                    <button id="search-btn" class="btn btn-light btn-outline-success" type="submit" onclick="loadProducts()">Search</button>
-                </form>
             </div>
         </nav>
-
     </header>
 
     <!-- Main -->
     <main class="main container">
+        <!-- Search Field recreated preserving all ids and onclick -->
+        <div class="input-group mb-3 w-50 mx-auto">
+            <input id="input-field" class="search-field form-control border-1 border-dark" type="text" placeholder="Search Products Here" aria-label="Search Products Here" aria-describedby="button-addon2">
+            <button type="button" class="btn btn-secondary search-button border-2 border-secondary" data-toggle="button" aria-pressed="false" autocomplete="off" id="search-btn" onclick="loadProducts()">Search</button>
+        </div>
+
         <!---------------------------------------------------
             Commenting below search field, It has some design issues. To make it professional this search box has been transfered to header with its ID's and onclcik functions.        
         -------------------------------------------------------->
