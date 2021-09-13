@@ -37,8 +37,8 @@ const showProducts = (products) => {
       <li class="rating"><h3>Price: $ ${product.price}</h3></li>
     </ul></div>
     <div class="d-flex">
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="w-50 cart-btn btn btn-secondary btn-outline">add to cart</button>
-      <button id="details-btn" class="w-50 btn details  cart-btn btn-info">Details</button></div></div>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="w-50 card-btn btn btn-secondary btn-outline">add to cart</button>
+      <button id="details-btn" class="w-50 btn details  card-btn btn-info">Details</button></div></div>
       `;
         //card add on the UI
         document.getElementById("all-products").appendChild(div);
