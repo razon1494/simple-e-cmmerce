@@ -24,16 +24,19 @@ const showProducts = (products) => {
         const ratingCount = product.rating.count;
         const div = document.createElement("div");
         div.classList.add("product");
-        div.innerHTML = `<div class="single-product">
+        div.innerHTML = `<div class="single-product card" style="width: 20rem;">
       <div>
-    <img class="product-image" src=${image}></img>
+    <img class="card-img-top" src=${image} width="200" height="200"></img>
       </div>
-      <h3>${product.title}</h3>
-      <p>Category: ${product.category}</p>
-      <p class='rating'>Rating: ${ratingRate} (${ratingCount})</p>
-      <h2>Price: $ ${product.price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <div class="card-body">
+      <h5 class="card-title">${product.title}</h5>
+      <p class="card-text">Category: ${product.category}</p>
+      <ul class="list-group list-group-flush">
+      <li class="list-group-item rating">Rating: ${ratingRate} (${ratingCount} users)</li>
+      <li class="list-group-item"><h3>Price: $ ${product.price}</h3></li>
+    </ul></div>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class=" add-cart btn btn-success">add to cart</button>
+      <button id="details-btn" class="btn details btn-danger">Details</button></div>
       `;
         //card add on the UI
         document.getElementById("all-products").appendChild(div);
@@ -101,5 +104,4 @@ const updateTotal = () => {
     grandTotal = grandTotal.toFixed(2);
     document.getElementById("total").innerText = grandTotal;
 };
-updateTotal();
 loadProducts();

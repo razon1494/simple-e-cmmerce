@@ -20,23 +20,22 @@
 </head>
 
 <body>
-    <!-- Website Name  -->
+    <!-- Website Name & Search Bar  -->
     <header>
-        <h1 id="title" class="container">Slow Store</h1>
+        <nav class="navbar navbar-light bg-light fixed-top">
+            <div class="container-fluid container">
+                <h1 class="title">Slow Store</h1>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search Here" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
     </header>
 
-    <!-- search Box -->
-    <main class="main">
-        <div class="search-field container my-4">
-            <div class="search-box ">
-                <input id="input-field" class="search-field mx-2" type="text" placeholder="Search Here" />
-                <button type="button" class=" search-button" data-toggle="button" aria-pressed="false" autocomplete="off" id="search-btn" onclick="loadProducts()">
-          Search
-        </button>
-            </div>
-        </div>
-
-        <div class="row">
+    <!-- Main -->
+    <main class="main container">
+        <div class="row g-5">
             <!-- Product Cards -->
             <div class="col-md-9 col-lg-9 col-sm-7">
                 <div id="all-products" class="">
@@ -48,8 +47,8 @@
                 <div class="cart" id="my-cart">
                     <table class="table">
                         <thead>
-                            <h1>My-Cart</h1>
-                            <tr>
+                            <h1 class="text-center">My-Cart</h1>
+                            <tr class="text-center">
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
@@ -89,7 +88,7 @@
                         </tbody>
                     </table>
                     <div class="parces text-center">
-                        <button class="btn btn-primary text-center">Buy Now</button>
+                        <button class="btn btn-outline-danger fw-bold text-center fs-5 px-4 buy-now">Buy Now</button>
                     </div>
                 </div>
             </div>
