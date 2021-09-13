@@ -30,15 +30,15 @@ const showProducts = (products) => {
     <img class="w-75 card-img-top" height="220px" src=${image}></img>
       </div>
       <div class="card-body">
-      <h5 class="card-title">${product.title}</h5>
+      <h6 class="card-title">${product.title}</h6>
       <p class="card-text">Category: ${product.category}</p>
       <ul class="list-group list-group-flush rounded">
       <li class=" fs-5 rating">Rating: <i class="fas fa-star-half-alt"></i> <span id='avg-rating'> ${ratingRate}</span> <span  id='user'> (${ratingCount} users)</span></li>
       <li class="rating"><h3>Price: $ ${product.price}</h3></li>
     </ul></div>
     <div class="d-flex">
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="w-50 add-cart btn btn-secondary btn-outline">add to cart</button>
-      <button id="details-btn" class="w-50 btn details btn-info">Details</button></div></div>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="w-50 cart-btn btn btn-secondary btn-outline">add to cart</button>
+      <button id="details-btn" class="w-50 btn details  cart-btn btn-info">Details</button></div></div>
       `;
         //card add on the UI
         document.getElementById("all-products").appendChild(div);
