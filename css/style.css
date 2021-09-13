@@ -9,7 +9,7 @@ body {
 
 .title {
     font-size: 40px;
-    color: CadetBlue;
+    color: whitesmoke;
 }
 
 .search-field {
@@ -55,7 +55,7 @@ body {
 .single-product {
     padding: 10px;
     transition: 0.6s;
-    height: 650px;
+    height: 680px;
     margin-top: 30px;
     margin-left: 10px;
 }
